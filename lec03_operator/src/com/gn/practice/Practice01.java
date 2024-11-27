@@ -18,7 +18,6 @@ public class Practice01 {
 		System.out.println("곱셈 : "+(num1*num2));
 		System.out.println("몫 : "+(num1/num2));
 		System.out.println("나머지 : "+(num1%num2));
-		
 
 	}
 
