@@ -3,6 +3,7 @@ package com.gn.practice;
 public class Practice02 {
 
 	public static void main(String[] args) {
+		
 		boolean isStudent = true;
 		System.out.println(isStudent);
 		char grade = 'A';
