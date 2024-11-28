@@ -10,6 +10,40 @@ public class ConditionStmt {
 			System.out.println("number는 5보다 큽니다.");
 		}
 
+		// 2. if~else문
+		int num = -3;
+		if (num > 0) {
+			System.out.println("양수입니다.");
+		} else {
+			System.out.println("음수입니다.");
+		}
+
+		// 3. if~else if ~else문
+		int a = 3;
+		if (a >= 9) {
+			System.out.println("9이상");
+		} else if (a >= 6) {
+			System.out.println("9미만 && 6이상");
+		} else if (a >= 3) {
+			System.out.println("9미만 && 6미만 && 3이상");
+		} else {
+			System.out.println("3미만");
+		}
+
+		// 양수 -> 짝수 vs 홀수
+
+		int target = -5;
+		if (target > 0) {
+			// 양수
+			if (target % 2 == 0) {
+				// 짝수
+			} else {
+				// 홀수
+			}
+		} else if (target < 0) {
+			// 음수
+		}
+
 	}
 
 }
