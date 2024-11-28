@@ -9,10 +9,9 @@ public class Homework04 {
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("문자를 입력하세요 : ");
-		String strLetter = sc.next();
-		char charLetter = strLetter.charAt(0);
+		char Letter = sc.next().charAt(0);
 		
-		System.out.println(charLetter + "의 유니코드 : " + (int)charLetter);
+		System.out.println(Letter + "의 유니코드 : " + (int)Letter);
 
 	}
 
