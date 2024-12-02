@@ -1,6 +1,6 @@
 package com.gn.study;
 
-public class array {
+public class DimensionalArray {
 
 	public static void main(String[] args) {
 		
