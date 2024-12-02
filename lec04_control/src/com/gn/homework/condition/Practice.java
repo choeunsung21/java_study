@@ -129,4 +129,36 @@ public class Practice {
 			System.out.println("음수 또는 0 : 양수만 입력해주세요.");
 		}
 	}
+
+	public void practice06() {
+
+		System.out.println("===합격인가? 불합격인가?");
+
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("각 과목의 점수를 입력하세요.");
+		System.out.print("소프트웨어설계 점수 : ");
+		int swDes = sc.nextInt();
+		System.out.print("소프트웨어개발 점수 : ");
+		int swDev = sc.nextInt();
+		System.out.print("데이터베이스구축 점수 : ");
+		int db = sc.nextInt();
+		System.out.print("프로그래밍언어활용 점수 : ");
+		int proLang = sc.nextInt();
+		System.out.print("정보시스템구축관리 점수 : ");
+		int is = sc.nextInt();
+
+		int score = swDes + swDev + db + proLang + is;
+		int avg = score / 5;
+
+		if (avg >= 60 && swDes > 40 && swDev > 40 && db > 40 && proLang > 40 && is > 40) {
+			System.out.println("합격을 축하합니다!");
+		} else if (avg < 60 || swDes < 40 || swDev < 40 || db < 40 || proLang < 40 || is < 40) {
+			System.out.println("불합격입니다");
+		} else {
+			System.out.println("오류");
+		}
+		sc.close();
+	}
+
 }

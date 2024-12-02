@@ -46,36 +46,60 @@ public class LoopStmt {
 //			}
 //			System.out.println();
 //		}
+//
+//		// 6. break를 사용한 중첩 for문
+//		// 외부 : 0에서 2 미만(=제외) 1씩 커지면서 반복
+//		// 내부 : 0에서 3 미만(=제외) 1씩 커지면서 반복
+//		for (int i = 1; i < 2; i++) {
+//			System.out.print("1 ");
+//			if (i == 2) {
+//				break;
+//			}
+//			for (int j = 1; j < 3; j++) {
+//				System.out.print("2 ");
+//				if (j == 3) {
+//					break;
+//				}
+//			}
+//			System.out.print("3\n");
+//		}
+//
+//		// 7. while문
+//		int start = 1;
+//		while (start < 10) {
+//			System.out.println(start);
+//			start++;
+//		}
+//		while (true) {
+//			System.out.println(start);
+//			start++;
+//			if (start > 10) {
+//				break;
+//			}
+//		}
+//
+//		// 8. do~while문
+//		int count1 = 10;
+//		while (count1 > 0 && count1 < 10) {
+//			System.out.println("while문 출력");
+//			count1--;
+//		}
+//
+//		int count2 = 10;
+//		do {
+//			System.out.println(count2);
+//			count2--;
+//		} while (count2 > 0 && count2 < 10);
+//		
+//		
+//
+//		// 9. continue
+//		for (int i = 1; i <= 10; i++) {
+//			if (i % 2 == 0) {
+//				continue;
+//			}
+//			System.out.println(i);
+//		}
 
-		// 6. break를 사용한 중첩 for문
-		// 외부 : 0에서 2 미만(=제외) 1씩 커지면서 반복
-		// 내부 : 0에서 3 미만(=제외) 1씩 커지면서 반복
-		for (int i = 1; i < 2; i++) {
-			System.out.print("1 ");
-			if (i == 2) {
-				break;
-			}
-			for (int j = 1; j < 3; j++) {
-				System.out.print("2 ");
-				if (j == 3) {
-					break;
-				}
-			}
-			System.out.print("3\n");
-		}
-
-		// 7. while문
-		int start = 1;
-		while (start < 10) {
-			System.out.println(start);
-			start++;
-		}
-		while (true) {
-			System.out.println(start);
-			start++;
-			if (start > 10) {
-				break;
-			}
-		}
 	}
 }

@@ -31,6 +31,9 @@ public class Run {
 		case 5:
 			practice.practice05();
 			break;
+		case 6:
+			practice.practice06();
+			break;
 		default:
 			System.out.println("입력 오류");
 			break;
