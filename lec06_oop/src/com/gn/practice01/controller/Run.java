@@ -1,6 +1,6 @@
-package com.gn.prictice01.controller;
+package com.gn.practice01.controller;
 
-import com.gn.prictice01.model.vo.Person;
+import com.gn.practice01.model.vo.Person;
 
 public class Run {
 

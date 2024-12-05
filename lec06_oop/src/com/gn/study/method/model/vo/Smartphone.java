@@ -25,4 +25,12 @@ public class Smartphone {
 	public String sendMsg(String msg) {
 		return "메시지 \'" + msg + "\'가 전송되었습니다";
 	}
+
+	public void checkWork() {
+		Hospital hospital = new Hospital();
+		hospital.emergencyCall();
+		hospital.doctorCall();
+		hospital.staffAnnouncement();
+		// hospital.personalRecord();
+	}
 }

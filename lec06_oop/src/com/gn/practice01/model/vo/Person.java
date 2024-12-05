@@ -1,4 +1,4 @@
-package com.gn.prictice01.model.vo;
+package com.gn.practice01.model.vo;
 
 public class Person {
 	public int solution(int[] array) {
