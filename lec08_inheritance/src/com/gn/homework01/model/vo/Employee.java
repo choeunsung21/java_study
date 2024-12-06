@@ -10,6 +10,7 @@ public class Employee extends Person {
 
 	public Employee(String name, int age, double height, double weight, int salary, String dept) {
 		super(age, height, weight);
+		this.name = name;
 		this.salary = salary;
 		this.dept = dept;
 	}
@@ -32,6 +33,7 @@ public class Employee extends Person {
 
 	@Override
 	public String toString() {
-		return "";
+		return "이름 : " + getName() + "\n나이 : " + getAge() + "\n키 : " + getHeight() + "\n몸무게 : " + getWeight()
+				+ "\n급여 : " + getSalary() + "\n부서 : " + getDept();
 	}
 }
