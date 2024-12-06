@@ -1,4 +1,6 @@
-package com.gn.practice05.model.vo.run;
+package com.gn.practice05.controller;
+
+import com.gn.practice05.model.vo.run.Book;
 
 public class Run {
 	public static void main(String[] args) {
