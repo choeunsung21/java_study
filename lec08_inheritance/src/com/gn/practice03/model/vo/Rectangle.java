@@ -31,7 +31,7 @@ public class Rectangle extends Point {
 
 	@Override
 	public void draw() {
-		System.out.println("(x, y) : (" + getX() + ", " + getY() + ")");
+		super.draw();
 		System.out.println("면적 : " + (width * height));
 		System.out.println("둘레 : " + (2 * (width + height)));
 	}
