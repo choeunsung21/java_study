@@ -13,8 +13,9 @@ public abstract class Menu {
 		this.price = price;
 	}
 
+	@Override
 	public String toString() {
-		return "메뉴명은 " + name + "이고, 가격은 " + price + "원입니다";
+		return "메뉴명은 " + name + "이고, 가격은 " + price + "원입니다\n";
 	}
 
 	public abstract void cook();

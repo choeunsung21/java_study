@@ -1,6 +1,6 @@
 package com.gn.homework02.model.vo;
 
-public abstract class Drink extends Menu {
+public class Drink extends Menu {
 	private String recipe;
 
 	public Drink() {

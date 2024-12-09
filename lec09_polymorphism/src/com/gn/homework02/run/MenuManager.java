@@ -1,5 +1,7 @@
 package com.gn.homework02.run;
 
+import com.gn.homework02.model.vo.Dish;
+import com.gn.homework02.model.vo.Drink;
 import com.gn.homework02.model.vo.Menu;
 
 public class MenuManager {
@@ -9,10 +11,18 @@ public class MenuManager {
 
 		int i = 0;
 		while (i < m.length) {
-//			if (Math.random() < 0.5) {
-//				m[0] = new Dish();
-//			}
+			if (Math.random() > 0.5) {
+				m[i] = new Dish();
+			} else {
+				m[i] = new Drink();
+			}
+			i++;
 		}
+
+		for (Menu mm : m) {
+			mm.cook();
+		}
+
 	}
 
 }

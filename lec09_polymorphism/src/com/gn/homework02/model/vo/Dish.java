@@ -1,6 +1,6 @@
 package com.gn.homework02.model.vo;
 
-public abstract class Dish extends Menu {
+public class Dish extends Menu {
 	private String ingredients;
 
 	public Dish() {
@@ -22,7 +22,7 @@ public abstract class Dish extends Menu {
 
 	@Override
 	public void cook() {
-		System.out.print(super.toString() + "재료는 " + getIngredients() + "입니다.");
+		System.out.println(super.toString() + "재료는 " + getIngredients() + "입니다.\n");
 	}
 
 }
