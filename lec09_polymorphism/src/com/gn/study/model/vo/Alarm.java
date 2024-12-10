@@ -9,5 +9,4 @@ public interface Alarm {
 	// 추상 메소드 -> public abstract 생략 가능
 	// void soundAlarm();
 	public abstract void soundAlarm();
-
 }
