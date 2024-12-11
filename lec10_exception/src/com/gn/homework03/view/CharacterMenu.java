@@ -18,5 +18,6 @@ public class CharacterMenu {
 		} catch (CharCheckException e) {
 			e.printStackTrace();
 		}
+		sc.close();
 	}
 }

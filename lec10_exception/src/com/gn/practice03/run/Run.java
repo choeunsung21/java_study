@@ -3,6 +3,7 @@ package com.gn.practice03.run;
 import java.util.Scanner;
 
 import com.gn.practice03.controller.LoginManager;
+import com.gn.practice03.exeption.InvalidCredentialsException;
 
 public class Run {
 
@@ -16,8 +17,10 @@ public class Run {
 		LoginManager lm = new LoginManager();
 		try {
 			lm.login(id, pwd);
-		} catch (Exception e) {
+		} catch (InvalidCredentialsException e) {
 			System.out.println(e.getMessage());
+		} finally {
+			sc.close();
 		}
 	}
 }
