@@ -21,6 +21,7 @@ public class Product {
 		return price;
 	}
 
+	@Override
 	public String toString() {
 		return name + "은(는)" + price + "원이에요";
 	}

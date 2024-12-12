@@ -7,9 +7,9 @@ public class Run {
 
 	public static void main(String[] args) {
 		List<Product> products = new ArrayList<Product>();
-		products.add((new Product("사과", 1000)));
-		products.add((new Product("바나나", 2000)));
-		products.add((new Product("딸기", 3000)));
+		products.add(new Product("사과", 1000));
+		products.add(new Product("바나나", 2000));
+		products.add(new Product("딸기", 3000));
 
 		System.out.println("===for each로 조회===");
 		for (Product p : products) {
