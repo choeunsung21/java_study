@@ -1,6 +1,7 @@
 package com.gn.homework01;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class BookController {
@@ -22,14 +23,33 @@ public class BookController {
 	}
 
 	public List<Book> searchBook(String keyword) {
-		return bookList;
+		List<Book> searchList = new ArrayList<Book>();
+		for (Book book : bookList) {
+			if (book.getTitle().contains(keyword)) {
+				searchList.add(book);
+			}
+		}
+		return searchList;
 	}
 
 	public Book deleteBook(String title, String author) {
-		return null;
+		Book removeBook = null;
+		for (int i = 0; i < bookList.size(); i++) {
+			if (bookList.get(i).getTitle().equals(title) && bookList.get(i).getAuthor().equals(author)) {
+				removeBook = bookList.get(i);
+				bookList.remove(i);
+			}
+		}
+		return removeBook;
 	}
 
 	public int ascBook() {
-		return 0;
+		try {
+			Collections.sort(bookList);
+			return 1;
+		} catch (Exception e) {
+			return -1;
+		}
+
 	}
 }
