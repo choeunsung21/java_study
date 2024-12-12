@@ -8,7 +8,15 @@ public class BookMenu {
 
 	public void mainMenu() {
 		while (true) {
-			System.out.println("선택 : ");
+			System.out.println("===가남 도서관에 오신걸 환영합니다===");
+			System.out.println("원하시는 업무의 번호를 선택하세요.");
+			System.out.println("새 도서 추가");
+			System.out.println("도서 전체 조회");
+			System.out.println("도서 검색 조회");
+			System.out.println("도서 삭제");
+			System.out.println("도서 오름차순 정렬");
+			System.out.println("종료");
+			System.out.print("메뉴 선택 : ");
 			int menu = sc.nextInt();
 			switch (menu) {
 			case 1:
@@ -37,11 +45,36 @@ public class BookMenu {
 	}
 
 	public void insertBook() {
-
+		System.out.println("===도서 등록===");
+		System.out.print("도서명 : ");
+		String title = sc.nextLine();
+		System.out.print("저자명 : ");
+		String author = sc.nextLine();
+		System.out.print("장르 : ");
+		int category = sc.nextInt();
+		System.out.print("가격 : ");
+		int price = sc.nextInt();
+		String categoryKind;
+		switch (category) {
+		case 1:
+			categoryKind = "인문";
+			break;
+		case 2:
+			categoryKind = "자연과학";
+			break;
+		case 3:
+			categoryKind = "어린이";
+			break;
+		default:
+			categoryKind = "기타";
+			break;
+		}
+		Book book = new Book(title, author, categoryKind, price);
+		bc.insertBook(book);
 	}
 
 	public void selectList() {
-
+		bc.selectList();
 	}
 
 	public void searchBook() {

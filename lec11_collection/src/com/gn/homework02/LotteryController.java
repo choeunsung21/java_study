@@ -3,11 +3,12 @@ package com.gn.homework02;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 
 public class LotteryController {
-	private Set<Lottery> lottery = new HashSet<Lottery>();
-	private Set<Lottery> win = new HashSet<Lottery>();
+	private Set<Lottery> lottery = new HashSet<>();
+	private Set<Lottery> win = new HashSet<>();
 
 	public boolean insertObject(Lottery l) {
 		return lottery.add(l);
@@ -19,37 +20,42 @@ public class LotteryController {
 			win.remove(l);
 		}
 		return isDelete;
-
 	}
 
 	public Set<Lottery> searchObject() {
 		return lottery;
-
 	}
 
 	public Set<Lottery> winObject() {
 		if (lottery.size() < 4) {
 			return null;
 		}
-		List<Lottery> lotteryList = new ArrayList<Lottery>();
-		win.add(null);
-		// 2. 랜덤으로 뽑기 위해 lottery를 ArrayList에 담고
-		// 인덱스를 이용해 win에 당첨자 저장
-		// 이때, 당첨자 수는 무조건 4명 이를 위한 추첨자 수는 4명 이상
-		// 만일 당첨자 목록에 삭제된 추첨 대상자가 있다면
-		// 기존에 당첨된 사람은 제외
-		// 삭제된 사람의 자리만 새로운 추첨자로 채우기
-		return lottery;
 
+		List<Lottery> lotteryList = new ArrayList<>(lottery);
+		Set<Lottery> winner = new HashSet<>();
+		Random random = new Random();
+
+		while (winner.size() < 4) {
+			int index = random.nextInt(lotteryList.size());
+			winner.add(lotteryList.get(index));
+		}
+		win = winner;
+		return winner;
 	}
 
 	public Set<Lottery> sortedWinObject() {
-		return lottery;
-
+		List<Lottery> sortedWinner = new ArrayList<>(win);
+		sortedWinner.sort((l1, l2) -> {
+			int nameComparison = l1.getName().compareTo(l2.getName());
+			if (nameComparison != 0) {
+				return nameComparison;
+			}
+			return l1.getPhone().compareTo(l2.getPhone());
+		});
+		return new HashSet<>(sortedWinner);
 	}
 
-	public boolean searchWinnder(Lottery l) {
-		return false;
-
+	public boolean searchWinner(Lottery l) {
+		return win.contains(l);
 	}
 }

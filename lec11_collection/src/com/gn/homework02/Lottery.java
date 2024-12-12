@@ -1,5 +1,7 @@
 package com.gn.homework02;
 
+import java.util.Objects;
+
 public class Lottery implements Comparable<Lottery> {
 	private String name;
 	private String phone;
@@ -32,26 +34,29 @@ public class Lottery implements Comparable<Lottery> {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+		return "이름= " + name + ", 전화번호=" + phone;
 	}
 
 	@Override
 	public int hashCode() {
-		// TODO Auto-generated method stub
-		return super.hashCode();
+		return Objects.hash(name, phone);
 	}
 
 	@Override
 	public boolean equals(Object obj) {
-		// TODO Auto-generated method stub
-		return super.equals(obj);
+		if (this == obj) {
+			return true;
+		}
+		if (!(obj instanceof Lottery)) {
+			return false;
+		}
+		Lottery other = (Lottery) obj;
+		return Objects.equals(name, other.name) && Objects.equals(phone, other.phone);
 	}
 
 	@Override
-	public int compareTo(Lottery I) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int compareTo(Lottery other) {
+		return this.name.compareTo(other.name);
 	}
 
 }

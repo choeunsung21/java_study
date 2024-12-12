@@ -51,8 +51,7 @@ public class Book {
 
 	@Override
 	public String toString() {
-		return "Book [getTitle()=" + getTitle() + ", getAuthor()=" + getAuthor() + ", getCategory()=" + getCategory()
-				+ ", getPrice()=" + getPrice() + "]";
+		return getTitle() + "(" + getAuthor() + "), " + getCategory() + ", " + getPrice();
 	}
 
 }
