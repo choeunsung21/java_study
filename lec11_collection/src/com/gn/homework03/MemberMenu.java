@@ -1,6 +1,10 @@
 package com.gn.homework03;
 
+import java.util.Iterator;
+import java.util.Map.Entry;
 import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeMap;
 
 public class MemberMenu {
 	private Scanner sc = new Scanner(System.in);
@@ -62,12 +66,10 @@ public class MemberMenu {
 				break;
 			case 3:
 				System.out.println("로그아웃 되었습니다.");
-				mainMenu();
-				return;
+				break;
 			default:
 				System.out.println("잘못 입력하였습니다. 다시 입력해주세요.");
 			}
-
 		}
 	}
 
@@ -98,9 +100,9 @@ public class MemberMenu {
 			String id = sc.nextLine();
 			System.out.print("비밀번호 : ");
 			String pwd = sc.nextLine();
-			if (mc.login(id, pwd) != null) {
-				Member member = new Member();
-				System.out.println(member.getName() + "님, 환영합니다!");
+			String name = mc.login(id, pwd);
+			if (name != null) {
+				System.out.println(name + "님, 환영합니다!");
 				memberMenu();
 				break;
 			} else {
@@ -128,20 +130,44 @@ public class MemberMenu {
 	}
 
 	public void changeName() {
+		System.out.println("=== 2. 이름 바꾸기 ===");
+
+		String name = "";
+		String id = "";
+
 		while (true) {
-			System.out.println("=== 2. 이름 바꾸기 ===");
 			System.out.print("아이디 : ");
-			String id = sc.nextLine();
+			id = sc.nextLine();
 			System.out.print("비밀번호 : ");
 			String pwd = sc.nextLine();
-			mc.login(id, pwd);
-			System.out.println("현재 설정된 이름 : ");
-			System.out.print("변경할 이름 : ");
-			String newName = sc.nextLine();
+			name = mc.login(id, pwd);
+			if (name != null) {
+				break;
+			} else {
+				System.out.println("아이디 또는 비밀번호가 틀렸습니다.");
+			}
 		}
+
+		System.out.println("현재 설정된 이름 : " + name);
+		System.out.println("변경할 이름 : ");
+		String newName = sc.nextLine();
+		mc.changeName(id, newName);
+		System.out.println("이름 변경에 성공했습니다.");
 	}
 
 	public void sameName() {
+		System.out.println("===3. 같은 이름 회원 찾기===");
+		System.out.println("검색할 이름 : ");
+		String searchName = sc.nextLine();
+		TreeMap<String, String> sameNameEntry = mc.sameName(searchName);
+		Set<Entry<String, String>> nameIdEntry = sameNameEntry.entrySet();
+		Iterator<Entry<String, String>> itEntry = nameIdEntry.iterator();
+		while (itEntry.hasNext()) {
+			Entry<String, String> memberEntry = itEntry.next();
+			String id = memberEntry.getKey();
+			String name = memberEntry.getValue();
+			System.out.println(name + "-" + id);
+		}
 	}
 
 }
