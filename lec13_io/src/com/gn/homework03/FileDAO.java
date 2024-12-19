@@ -47,6 +47,13 @@ public class FileDAO {
 	}
 
 	public void fileEdit(String file, String s) {
-
+		File userFile = new File(def, file);
+		if (userFile.exists()) {
+			try (BufferedWriter bw = new BufferedWriter(new FileWriter(userFile, true))) {
+				bw.write(s);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 }
